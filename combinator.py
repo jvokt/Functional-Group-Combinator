@@ -143,13 +143,12 @@ for ligand1 in ligands:
     #if ligand1 in importantLigs or ligand2 in importantLigs:
       #print ligand1 + ', ' + ligand2
       molecule = basename + '-' + p1 + '-' + ligand1 + '-' + p2 + '-' + ligand2
-      #dir = 'jobs/' + basedir + '/' + basis + '/' + method + '/' + \
-      #  runtype + '/' + charge + '/' + nbo + '/' + spinmult + '/' + molecule
-      dir = 'xyzs/neutral/'
+      dir = 'jobs/' + basedir + '/' + basis + '/' + method + '/' + \
+        runtype + '/' + charge + '/' + nbo + '/' + spinmult + '/' + molecule
       smile = getSMILE(base, p1, ligand1, p2, ligand2)
       createXYZ(smile,molecule,dir)
-      #createInputFile(molecule,dir)
-      #if int(autorun) == 1: runJob(molecule, dir)
+      createInputFile(molecule,dir)
+      if int(autorun) == 1: runJob(molecule, dir)
 
 if int(autorun) == 0: runJobs()
 jobs.close()
