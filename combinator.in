@@ -1,0 +1,12 @@
+base         catecholOmethyl
+p1           1
+p2           5
+ligand-group all
+method       wpbeh
+basis        6-31gs
+runtype      minimize
+autorun      1
+charge       0
+nbo          no
+spinmult     1
+basedir      methylated
